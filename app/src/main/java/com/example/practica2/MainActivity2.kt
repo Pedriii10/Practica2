@@ -22,20 +22,15 @@ class MainActivity2 : AppCompatActivity() {
         val weight = intent.getStringExtra(WEIGHT_EXTRA)
         val height = intent.getStringExtra(HEIGHT_EXTRA)
         val gender = intent.getStringExtra(GENDER_EXTRA)
-        val IMC = intent.getDoubleExtra("IMC", 0.0)
+        val IMC = intent.getDoubleExtra("IMC", 0.0) // Cambia a getDoubleExtra para IMC
         val state = intent.getStringExtra("state")
 
-
-        binding.textViewResult.text = IMC.toString()
+        binding.textViewResult.text = String.format("%.2f", IMC)
         binding.stateResult.text = state
-
 
         binding.secondReturnButton.setOnClickListener {
             finish()
         }
-
     }
-
-
 }
 

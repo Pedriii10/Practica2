@@ -7,20 +7,22 @@
     tools:context=".MainActivity"
     android:padding="20dp">
 
+
     <TextView
         android:id="@+id/weight_name"
-        android:layout_width="110dp"
-        android:layout_height="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="@string/weight_name"
+        app:layout_constraintEnd_toStartOf="@id/weight_text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/weight_text"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/weight_text"
-        android:layout_width="254dp"
-        android:layout_height="30dp"
-        android:inputType="number"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
         app:layout_constraintStart_toEndOf="@id/weight_name"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,32 +30,31 @@
 
     <TextView
         android:id="@+id/height_name"
-        android:layout_width="110dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
         android:text="@string/height_name"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/weight_name"
         app:layout_constraintEnd_toStartOf="@id/height_text"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/weight_name" />
 
     <EditText
         android:id="@+id/height_text"
-        android:layout_width="254dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="8dp"
-        android:inputType="number"
-        app:layout_constraintStart_toEndOf="@id/height_name"
-        app:layout_constraintTop_toBottomOf="@id/weight_text"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        android:textAlignment="center"/>
+        app:layout_constraintStart_toEndOf="@id/height_name"
+        app:layout_constraintTop_toBottomOf="@id/weight_text" />
 
     <RadioGroup
         android:id="@+id/radioGroup_gender"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/height_name"
+        app:layout_constraintTop_toBottomOf="@id/height_text"
         app:layout_constraintEnd_toEndOf="parent"
         android:orientation="horizontal"
         >
@@ -85,7 +86,7 @@
         android:orientation="horizontal"
         android:textColor="@color/black"
         />
-    
+
 
 
     <Button

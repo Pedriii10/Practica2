@@ -37,8 +37,8 @@ class MainActivity : AppCompatActivity() {
         myIntent.putExtra(WEIGHT_EXTRA, binding.weightText.text.toString())
         myIntent.putExtra(HEIGHT_EXTRA, binding.heightText.text.toString())
         myIntent.putExtra(GENDER_EXTRA, getSelectedGenderText())
-        myIntent.putExtra("IMC", IMC) // Agrega el IMC como un extra
-        myIntent.putExtra("state", state) // Agrega el estado como un extra
+        myIntent.putExtra("IMC", IMC)
+        myIntent.putExtra("state", state)
         startActivity(myIntent)
     }
 
@@ -63,6 +63,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun saveDataAndCalculateIMC() {
+        // Elimina la siguiente línea, ya que declara una variable local que sobrescribe la variable de clase
+        // val weight = binding.weightText.text.toString().toDouble()
         val weight = binding.weightText.text.toString().toDouble()
         val height = binding.heightText.text.toString().toDouble()
         val gender = getSelectedGenderText()
@@ -72,6 +74,7 @@ class MainActivity : AppCompatActivity() {
         // Envía los resultados a la siguiente actividad
         sendInfoToSecondActivity(IMC, getIMCState(IMC, gender))
     }
+
 
     private fun calculateIMC(weight: Double, height: Double, gender: String): Double {
         return weight / (height * height)
